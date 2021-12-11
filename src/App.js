@@ -1,16 +1,16 @@
 import './App.css';
 import React, {useState, useEffect} from "react";
 import axios from "axios";
-import "bootstrap/dist/css/bootstrap.min.css"
 import TodoView from "./components/TodoListView";
 import {nanoid} from "nanoid";
+import {Button, Form} from "react-bootstrap";
+import {FaPlus} from "react-icons/fa";
 
 function App() {
 
     const [todoList, setTodoList] = useState([{}])
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
-
 
 
     useEffect(() => {
@@ -21,32 +21,35 @@ function App() {
     });
 
     const addTodoHandler = () => {
-      axios.post(`http://localhost:8000/api/add-todo/`, {'nanoid': nanoid(), 'title': title, 'description': desc}).then(res => console.log(res))
+      axios.post(`http://localhost:8000/api/add-todo/`,
+          {'nanoid': nanoid(), 'title': title, 'description': desc, 'addedDT': Date(), 'updatedDT': Date()})
+          .then(res => console.log(res))
     };
 
   return (
-        <div id="main" className="App  justify-content-center align-content-center mx-auto my-auto" style={{"width": "400px", "backgroundColor":"currenColor", "margintop": "15px"}}>
-            <br/>
-            <h1 className="card-header text-white bg-primary mb-4">
-                Task Manager
-            </h1>
+        <div id="main" className="App  justify-content-center align-content-center mx-auto my-auto" style={{"width": "480px", "backgroundColor":"white", "margintop": "15px"}}>
+
             <div className="card-body list-group-item">
-                <h5 className="card text-white bg-dark mb-3">
+                <h5 className="card text-white bg-dark mb-4" style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>
                     Add Your Task
                 </h5>
-                <form>
-                    <div className={"form-group"} id={'form'} align={'left'}>
-                        <label htmlFor={'title'}>Title</label>
-                        <input id={"title"} className={'form-control'} onChange={event => setTitle(event.target.value)}/>
-                        <label className={'mb-3 form-text form-label text-muted'}>*Title can not be empty</label><br/>
-                        <label htmlFor={'desc'} >Description</label>
-                        <textarea id={"desc"} className={'mb-3 form-control'} rows={"4"} onChange={event => setDesc(event.target.value)}/>
-                    </div>
-                </form>
-                    <button className={"btn btn-outline-primary mx-2 mb-4"} style={{"borderRadius": '50px', 'front-weight':'bold'}} onClick={addTodoHandler}>
-                        Add Task
-                    </button>
-                <h5 className={"card text-white bg-dark mb-3"}>Your Tasks</h5>
+                <Form align={'left'}>
+                    <Form.Group className={"mb-3"} controlId={'title'} >
+                        <Form.Label>Title</Form.Label>
+                        <Form.Control required type={'text'} onChange={event => setTitle(event.target.value)}/>
+                        <Form.Control.Feedback type={'invalid'} >Title can not be empty</Form.Control.Feedback>
+                        <Form.Text className={'mb-1 text-muted'} style={{'font-family': 'Garamond'}}>*Title can not be empty</Form.Text><br/>
+                    </Form.Group >
+                    <Form.Group className={"mb-4"} controlId={'desc'}>
+                    <Form.Label>Description</Form.Label>
+                        <Form.Control as={'textarea'} rows={4} onChange={event => setDesc(event.target.value)}/>
+                        </Form.Group>
+
+                </Form>
+                    <Button className={" mx-2 mb-5"} variant={'success'} style={{borderRadius: '50px',}} onClick={addTodoHandler}>
+                        Add <FaPlus style={{'padding-bottom':'3.5px'}}/>
+                    </Button>
+                <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>Your Tasks</h5>
                 <div className={'justify-content-start align-content-start'}>
                     <TodoView todoList = {todoList} />
                 </div>

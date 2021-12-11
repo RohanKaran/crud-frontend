@@ -4,10 +4,22 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css"
+import Update from './components/Update';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+   <React.StrictMode> <div id="main" className="App justify-content-center align-content-center mx-auto my-auto" style={{"width": "480px", "backgroundColor":"white"}}>
+            <br/>
+            <h1 className="card-body text-white bg-primary mb-4">
+                Task Manager
+            </h1></div>
+  <Router>
+
+      <Routes>
+          <Route path=':nanoid' element={<Update/>}/>
+          <Route path='/' element={<App/>}/>
+      </Routes>
+  </Router></React.StrictMode>,
   document.getElementById('root')
 );
 
