@@ -5,7 +5,7 @@ import {FaTrash, FaEye} from "react-icons/fa";
 
 function TodoItem(props) {
     const deleteTodoHandler = async (nanoid) => {
-    await axios.delete(`http://localhost:8000/api/delete-todo/${nanoid}`).then(res => console.log(res.data))
+    await axios.delete(`https://crud-rk.herokuapp.com/api/delete-todo/${nanoid}`).then(res => console.log(res.data))
     };
     const [open, setOpen] = useState(false);
     return (

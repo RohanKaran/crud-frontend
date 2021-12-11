@@ -14,14 +14,14 @@ function App() {
 
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/get-todo`)
+        axios.get(`https://crud-rk.herokuapp.com/api/get-todo`)
             .then(res => {
                 setTodoList(res.data)
             })
     });
 
     const addTodoHandler = () => {
-      axios.post(`http://localhost:8000/api/add-todo/`,
+      axios.post(`https://crud-rk.herokuapp.com/api/add-todo/`,
           {'nanoid': nanoid(), 'title': title, 'description': desc, 'addedDT': Date(), 'updatedDT': Date()})
           .then(res => console.log(res))
     };

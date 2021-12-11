@@ -11,7 +11,7 @@ function Update() {
     const [todo, setTodo] = useState({})
     let nid = useParams().nanoid;
     const fetchdata = async () => {
-        const res = await axios.get(`http://localhost:8000/api/get-todo/${nid}`);
+        const res = await axios.get(`https://crud-rk.herokuapp.com/api/get-todo/${nid}`);
         setTodo(res.data);
     };
     useEffect(() => {
@@ -31,7 +31,7 @@ function Update() {
         }
 
 
-        await axios.put(`http://localhost:8000/api/update-todo/${id}`,
+        await axios.put(`https://crud-rk.herokuapp.com/api/update-todo/${id}`,
 
             {
                 'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
