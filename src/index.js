@@ -16,8 +16,9 @@ ReactDOM.render(
   <Router>
 
       <Routes>
-          <Route path=':nanoid' element={<Update/>}/>
           <Route path='/' element={<App/>}/>
+          <Route path=':nanoid' element={<Update/>}/>
+
       </Routes>
   </Router></React.StrictMode>,
   document.getElementById('root')
