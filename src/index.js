@@ -22,7 +22,7 @@ ReactDOM.render(
       </Routes>
   </Router>
    <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto bg-secondary"
-        style={{"width": "400px", "backgroundColor":"white"}}>
+        style={{"width": "360px", "backgroundColor":"white"}}>
             <div className="card-body text-white">
                 Created by : Rohan Karan
                 <br/>
