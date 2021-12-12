@@ -14,7 +14,7 @@ ReactDOM.render(
             <h1 className="card-body text-white bg-primary mb-4">
                 Task Manager
             </h1></div>
-  <Router>
+  <Router basename={'/'}>
 
       <Routes>
           <Route path='/crud-frontend' element={<App/>}/>
