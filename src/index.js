@@ -18,7 +18,7 @@ ReactDOM.render(
 
       <Routes>
           <Route path='/crud-frontend' element={<App/>}/>
-          <Route exact path='/crud-frontend/:nanoid' element={<Update/>}/>
+          <Route path='/crud-frontend/update' element={<Update/>}/>
 
       </Routes>
   </Router>

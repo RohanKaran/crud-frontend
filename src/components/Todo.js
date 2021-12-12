@@ -30,7 +30,7 @@ function TodoItem(props) {
                 <Dropdown.Toggle variant={'outline-primary'}/>
                 <Dropdown.Menu align={'end'}>
                     <div align={'right'}>
-                    <Dropdown.Item href={`/crud-frontend/${props.todo.nanoid}`} >
+                    <Dropdown.Item href={`/crud-frontend/update`}>
                     <span style={{'float':'left'}}>Update</span> <FaPencilAlt style={{'padding-bottom':'3px'}} className={'link-warning'}/></Dropdown.Item>
 
                     <Dropdown.Item onClick={() => deleteTodoHandler(props.todo.nanoid)} style={{"align":"right"}}>
