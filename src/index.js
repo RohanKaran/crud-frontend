@@ -8,7 +8,7 @@ import Update from './components/Update';
 import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 ReactDOM.render(
-   <React.StrictMode> <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto" style={{"width": "400px", "backgroundColor":"white"}}>
+   <React.StrictMode> <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto" style={{"width": "360px", "backgroundColor":"white"}}>
             <br/>
             <h1 className="card-body text-white bg-primary mb-4">
                 Task Manager
