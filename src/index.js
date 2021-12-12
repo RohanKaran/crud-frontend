@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Update from './components/Update';
-import {BrowserRouter as Router, HashRouter, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 ReactDOM.render(
    <React.StrictMode> <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto"

@@ -73,7 +73,7 @@ function Update() {
                         href={'/crud-frontend'} type={'submit'}  className={" mx-2 mb-5"} variant={'success'}
                                        style={{borderRadius: '50px', }}
 
-                                       disabled={((title=== a ) && (desc === b) || (title.trim()===""))}
+                                       disabled={((title=== a ) && (desc === b))}
 
                 >
 
