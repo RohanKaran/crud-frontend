@@ -16,11 +16,19 @@ ReactDOM.render(
   <Router>
 
       <Routes>
-          <Route path='/' element={<App/>}/>
-          <Route path=':nanoid' element={<Update/>}/>
+          <Route path='/crud-frontend' element={<App/>}/>
+          <Route path='/crud-frontend/:nanoid' element={<Update/>}/>
 
       </Routes>
-  </Router></React.StrictMode>,
+  </Router>
+   <div id="main" className="App justify-content-center align-content-center mx-auto my-auto bg-secondary" style={{"width": "480px", "backgroundColor":"white"}}>
+            <br/>
+            <div className="card-body text-white">
+                Created by : Rohan Karan
+                <br/>
+                <a href={'https://github.com/rohankaran/crud-app'} className={'text-white-50'}>(source code)</a>
+            </div></div>
+   </React.StrictMode>,
   document.getElementById('root')
 );
 
