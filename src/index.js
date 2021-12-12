@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "bootstrap/dist/css/bootstrap.min.css"
 import Update from './components/Update';
-import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
+import {BrowserRouter as Router, HashRouter, Route, Routes} from "react-router-dom";
 
 ReactDOM.render(
    <React.StrictMode> <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto"
@@ -14,14 +14,14 @@ ReactDOM.render(
             <h1 className="card-body text-white bg-primary mb-4">
                 Task Manager
             </h1></div>
-  <Router basename={'/'}>
+  <HashRouter>
 
       <Routes>
           <Route path='/crud-frontend' element={<App/>}/>
           <Route path='/crud-frontend/:nanoid' element={<Update/>}/>
 
       </Routes>
-  </Router>
+  </HashRouter>
    <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto bg-secondary"
         style={{"width": "480px", "backgroundColor":"white", 'max-width':"100%"}}>
             <div className="card-body text-white">
