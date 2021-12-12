@@ -28,7 +28,7 @@ function App() {
 
   return (
         <div id="main" className="App  justify-content-center align-content-center mx-auto my-auto"
-             style={{"width": "360px", "backgroundColor":"white", "margintop": "15px"}}>
+             style={{"width": "480px",'max-width':"100%", "backgroundColor":"white", "margintop": "15px"}}>
 
             <div className="card-body list-group-item">
                 <h5 className="card text-white bg-dark mb-4" style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>
