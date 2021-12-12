@@ -27,7 +27,7 @@ function App() {
     };
 
   return (
-        <div id="main" className="App  justify-content-center align-content-center mx-auto my-auto" style={{"width": "480px", "backgroundColor":"white", "margintop": "15px"}}>
+        <div id="main" className="App  justify-content-center align-content-center mx-auto my-auto" style={{"width": "400px", "backgroundColor":"white", "margintop": "15px"}}>
 
             <div className="card-body list-group-item">
                 <h5 className="card text-white bg-dark mb-4" style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>
@@ -46,7 +46,11 @@ function App() {
                         </Form.Group>
 
                 </Form>
-                    <Button className={" mx-2 mb-5"} variant={'success'} style={{borderRadius: '50px',}} onClick={addTodoHandler}>
+                    <Button className={" mx-2 mb-5"} variant={'success'}
+
+                            style={{borderRadius: '50px',}} onClick={addTodoHandler}
+                    disabled={(title.trim()==="")}
+                    >
                         Add <FaPlus style={{'padding-bottom':'3.5px'}}/>
                     </Button>
                 <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>Your Tasks</h5>
