@@ -14,14 +14,14 @@ ReactDOM.render(
             <h1 className="card-body text-white bg-primary mb-4">
                 Task Manager
             </h1></div>
-  <HashRouter>
+  <Router>
 
       <Routes>
           <Route path='/crud-frontend' element={<App/>}/>
           <Route path='/crud-frontend/:nanoid' element={<Update/>}/>
 
       </Routes>
-  </HashRouter>
+  </Router>
    <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto bg-secondary"
         style={{"width": "480px", "backgroundColor":"white", 'max-width':"100%"}}>
             <div className="card-body text-white">
