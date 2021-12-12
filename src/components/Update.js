@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import {Button, Form} from "react-bootstrap";
 import {FaPlus} from "react-icons/fa";
-import {useParams} from "react-router-dom";
+import {useParams, useNavigate} from "react-router-dom";
 import {nanoid} from "nanoid";
 
 function Update() {
@@ -22,6 +22,8 @@ function Update() {
     let [desc, setDesc] = useState("q309pjdAA()&#:woau!@")
     let a = "ojef-=-39uaenflenfaw?:{/";
     let b = "q309pjdAA()&#:woau!@";
+    let nav = useNavigate();
+
     const updateTodoHandler = async (id) => {
         if (title === "ojef-=-39uaenflenfaw?:{/") {
             title = todo.title
@@ -37,6 +39,8 @@ function Update() {
                 'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
             })
             .then(res => console.log(res.data))
+        nav("/crud-frontend", { replace: true });
+
     };
 
 
@@ -73,7 +77,9 @@ function Update() {
                         href={'/crud-frontend'} type={'submit'}  className={" mx-2 mb-5"} variant={'success'}
                                        style={{borderRadius: '50px', }}
 
-                                       disabled={((title=== a ) && (desc === b))}>
+                                       disabled={((title=== a ) && (desc === b)) || (title.trim() === "")}
+
+                >
 
                     Update <FaPlus style={{'padding-bottom': '3.5px'}}/>
                 </Button>
