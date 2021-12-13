@@ -12,9 +12,6 @@ function Update() {
     let nid = useParams().nanoid;
     const fetchdata = async () => {
         const res = await axios.get(`https://crud-rk.herokuapp.com/api/get-todo/${nid}`);
-        if (res.data === null){
-            throw new Error("Bad Request!")
-        }
         setTodo(res.data);
     };
     useEffect(() => {
