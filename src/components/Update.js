@@ -22,7 +22,6 @@ function Update() {
     let [desc, setDesc] = useState("q309pjdAA()&#:woau!@")
     let a = "ojef-=-39uaenflenfaw?:{/";
     let b = "q309pjdAA()&#:woau!@";
-    let nav = useNavigate();
 
     const updateTodoHandler = async (id) => {
         if (title === "ojef-=-39uaenflenfaw?:{/") {
@@ -38,8 +37,21 @@ function Update() {
             {
                 'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
             })
-            .then(res => console.log(res.data))
-        nav("/crud-frontend", { replace: true });
+        await axios.put(`https://crud-rk.herokuapp.com/api/update-todo/${id}`,
+
+            {
+                'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
+            })
+        await axios.put(`https://crud-rk.herokuapp.com/api/update-todo/${id}`,
+
+            {
+                'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
+            })
+        await axios.put(`https://crud-rk.herokuapp.com/api/update-todo/${id}`,
+
+            {
+                'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
+            })
 
     };
 
