@@ -46,16 +46,16 @@ function TodoItem(props) {
       <Collapse in={open}>
 
         <div id="example-collapse-text" className="card-body " style={{'word-wrap':'break-word'}} align={'left'}>
-            <span style={{'font-family': 'lato', 'font-size':'16px'}}>Title :</span><br/>
+            <span style={{'font-weight': 'bold', 'font-size':'16px'}}>Title :</span><br/>
             {props.todo.title}
             <br/>
-            <span style={{'font-family': 'lato', 'font-size':'16px'}}>Description :</span><br/>
+            <span style={{'font-weight': 'bold', 'font-size':'16px'}}>Description :</span><br/>
             {props.todo.description}
             <br/>
-            <span style={{'font-family': 'lato','font-size':'16px'}}>Added on :</span><br/>
+            <span style={{'font-weight': 'bold','font-size':'16px'}}>Added on :</span><br/>
             {props.todo.addedDT}
             <br/>
-            <span style={{'font-family': 'lato','font-size':'16px'}}>Last updated on :</span><br/>
+            <span style={{'font-weight': 'bold','font-size':'16px'}}>Last updated on :</span><br/>
             {props.todo.updatedDT}
 
 
