@@ -22,6 +22,7 @@ function Update() {
     let [desc, setDesc] = useState("q309pjdAA()&#:woau!@")
     let a = "ojef-=-39uaenflenfaw?:{/";
     let b = "q309pjdAA()&#:woau!@";
+    const nav = useNavigate();
 
     const updateTodoHandler = async (id) => {
         if (title === "ojef-=-39uaenflenfaw?:{/") {
@@ -42,16 +43,7 @@ function Update() {
             {
                 'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
             })
-        await axios.put(`https://crud-rk.herokuapp.com/api/update-todo/${id}`,
 
-            {
-                'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
-            })
-        await axios.put(`https://crud-rk.herokuapp.com/api/update-todo/${id}`,
-
-            {
-                'nanoid': nanoid(), 'title': title, 'description': desc, 'updatedDT': Date()
-            })
 
     };
 
@@ -85,8 +77,11 @@ function Update() {
                     </Form.Group>
 
 
-                <Button onClick={() => updateTodoHandler(nid)}
-                        href={'/crud-frontend'}
+                <Button onClick={() => {
+                    updateTodoHandler(nid);
+                    nav('/crud-frontend');
+                }}
+
                         type={'submit'}  className={" mx-2 mb-5"} variant={'success'}
                                        style={{borderRadius: '50px', }}
 
