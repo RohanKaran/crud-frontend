@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, {useState} from 'react'
 import {Button, ButtonGroup, Collapse, Dropdown} from "react-bootstrap";
-import {FaTrash, FaEye, FaPencilAlt, FaRegArrowAltCircleRight} from "react-icons/fa";
+import {FaTrash, FaEye, FaPencilAlt} from "react-icons/fa";
 import {BsFillArrowRightCircleFill} from "react-icons/bs";
 import {useNavigate} from "react-router-dom";
 
@@ -13,7 +13,7 @@ function TodoItem(props) {
     const nav = useNavigate();
 
     return (
-        <div className={'mx-1'} align={'right'} style={{'font-family':'Segoe UI'}}>
+        <div align={'right'} style={{'font-family':'Segoe UI'}}>
                 <span className={'text-break'}
                       style={{'padding-top':'6px', 'font-family': 'lato', 'font-size':'17px', 'word-wrap':'break-word', 'float':'left'}}>
                     <BsFillArrowRightCircleFill/>&nbsp; {props.todo.title}
