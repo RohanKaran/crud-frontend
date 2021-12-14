@@ -11,8 +11,8 @@ function TodoItem(props) {
 
     return (
         <div align={'right'} style={{'font-family':'Segoe UI'}}>
-                <span className={'float-start text-break'}
-                      style={{'padding-top':'7px','font-family': 'lato', 'font-size':'17px', 'word-wrap':'break-word'}}>
+                <span className={'text-break'}
+                      style={{'padding-top':'6px','font-family': 'lato', 'font-size':'17px', 'word-wrap':'break-word', 'float':'left'}}>
                     {props.todo.title}
                 </span>
             <Button
@@ -20,15 +20,16 @@ function TodoItem(props) {
         aria-controls="example-collapse-text"
         aria-expanded={open}
         className="mx-2" variant={'outline-info'} style={{borderRadius:'100px'}}
+        hidden={!props.todo.title}
       >
         <FaEye style={{'padding-bottom':'3px'}}/>
       </Button>
 
 
-            <Dropdown as={ButtonGroup} className="mx-1">
+            <Dropdown as={ButtonGroup} className="mx-1" hidden={!props.todo.title}>
 
                 <Dropdown.Toggle variant={'outline-primary'}/>
-                <Dropdown.Menu align={'end'}>
+                <Dropdown.Menu align={'end'} >
                     <div align={'right'}>
                     <Dropdown.Item href={`/crud-frontend/${props.todo.nanoid}`}>
                     <span style={{'float':'left'}}>Update</span> <FaPencilAlt style={{'padding-bottom':'3px'}} className={'link-warning'}/></Dropdown.Item>
