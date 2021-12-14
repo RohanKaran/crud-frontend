@@ -61,7 +61,7 @@ function App() {
                     >
                         Add <FaPlus style={{'padding-bottom':'3.5px'}}/>
                     </Button>
-                <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>All Tasks</h5>
+                <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>Tasks</h5>
                 <div className={'justify-content-start align-content-start'}>
                     <TodoView todoList = {todoList} />
                 </div>
