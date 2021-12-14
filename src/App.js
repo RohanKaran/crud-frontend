@@ -33,7 +33,7 @@ function App() {
              style={{"width": "480px",'max-width':"100%", "backgroundColor":"white", "margintop": "15px"}}>
 
             <div className="card-body list-group-item">
-                <h5 className="card text-white bg-dark mb-4" style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>
+                <h5 className="card text-white bg-dark mb-4" style={{'font-family': 'Times New Roman', 'font-weight': 'bold'}}>
                     Add Task
                 </h5>
                 <Form align={'left'}>
@@ -61,7 +61,7 @@ function App() {
                     >
                         Add <FaPlus style={{'padding-bottom':'3.5px'}}/>
                     </Button>
-                <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>Tasks</h5>
+                <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Times New Roman', 'font-weight': 'bold'}}>Tasks</h5>
                 <div className={'justify-content-start align-content-start'}>
                     <TodoView todoList = {todoList} />
                 </div>
