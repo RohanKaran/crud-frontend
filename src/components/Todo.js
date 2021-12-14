@@ -1,7 +1,8 @@
 import axios from 'axios'
 import React, {useState} from 'react'
 import {Button, ButtonGroup, Collapse, Dropdown} from "react-bootstrap";
-import {FaTrash, FaEye, FaPencilAlt} from "react-icons/fa";
+import {FaTrash, FaEye, FaPencilAlt, FaRegArrowAltCircleRight} from "react-icons/fa";
+import {BsFillArrowRightCircleFill} from "react-icons/bs";
 
 function TodoItem(props) {
     const deleteTodoHandler = async (nanoid) => {
@@ -10,10 +11,10 @@ function TodoItem(props) {
     const [open, setOpen] = useState(false);
 
     return (
-        <div align={'right'} style={{'font-family':'Segoe UI'}}>
+        <div className={'mx-1'} align={'right'} style={{'font-family':'Segoe UI'}}>
                 <span className={'text-break'}
-                      style={{'padding-top':'6px','font-family': 'lato', 'font-size':'17px', 'word-wrap':'break-word', 'float':'left'}}>
-                    {props.todo.title}
+                      style={{'padding-top':'6px', 'font-family': 'lato', 'font-size':'17px', 'word-wrap':'break-word', 'float':'left'}}>
+                    <BsFillArrowRightCircleFill/>&nbsp; {props.todo.title}
                 </span>
             <Button
         onClick={() => setOpen(!open)}
@@ -26,7 +27,7 @@ function TodoItem(props) {
       </Button>
 
 
-            <Dropdown as={ButtonGroup} className="mx-1" hidden={!props.todo.title}>
+            <Dropdown as={ButtonGroup} hidden={!props.todo.title}>
 
                 <Dropdown.Toggle variant={'outline-primary'}/>
                 <Dropdown.Menu align={'end'} >
@@ -46,7 +47,7 @@ function TodoItem(props) {
 
       <Collapse in={open}>
 
-        <div id="example-collapse-text" className="card-body " style={{'word-wrap':'break-word'}} align={'left'}>
+        <div id="example-collapse-text" className="card-body mx-3" style={{'word-wrap':'break-word'}} align={'left'}>
             <span style={{'font-weight': 'bold', 'font-size':'16px'}}>Title :</span><br/>
             {props.todo.title}
             <br/>
