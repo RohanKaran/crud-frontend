@@ -63,7 +63,7 @@ function TodoItem(props) {
         </div>
 
       </Collapse>
-            <hr/>
+            <hr hidden={!props.todo.title}/>
         </div>
     )
 }
