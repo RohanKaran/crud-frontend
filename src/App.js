@@ -5,12 +5,14 @@ import TodoView from "./components/TodoListView";
 import {nanoid} from "nanoid";
 import {Button, Form} from "react-bootstrap";
 import {FaPlus} from "react-icons/fa";
+import {useNavigate} from "react-router-dom";
 
 function App() {
 
     const [todoList, setTodoList] = useState([{}])
     const [title, setTitle] = useState("")
     const [desc, setDesc] = useState("")
+    const nav = useNavigate();
 
 
     useEffect(() => {
@@ -49,7 +51,12 @@ function App() {
                 </Form>
                     <Button className={" mx-2 mb-5"} variant={'success'}
 
-                            style={{borderRadius: '50px',}} onClick={addTodoHandler}
+                            style={{borderRadius: '50px',}}
+                            onClick={() => {
+                                addTodoHandler();
+                                nav('/crud-frontend');
+
+                    }}
                     disabled={(title.trim()==="")}
                     >
                         Add <FaPlus style={{'padding-bottom':'3.5px'}}/>

@@ -3,12 +3,14 @@ import React, {useState} from 'react'
 import {Button, ButtonGroup, Collapse, Dropdown} from "react-bootstrap";
 import {FaTrash, FaEye, FaPencilAlt, FaRegArrowAltCircleRight} from "react-icons/fa";
 import {BsFillArrowRightCircleFill} from "react-icons/bs";
+import {useNavigate} from "react-router-dom";
 
 function TodoItem(props) {
     const deleteTodoHandler = async (nanoid) => {
-    await axios.delete(`https://crud-rk.herokuapp.com/api/delete-todo/${nanoid}`).then(res => console.log(res.data))
+    await axios.delete(`https://crud-rk.herokuapp.com/api/delete-todo/${nanoid}`).then(res => console.log(res))
     };
     const [open, setOpen] = useState(false);
+    const nav = useNavigate();
 
     return (
         <div className={'mx-1'} align={'right'} style={{'font-family':'Segoe UI'}}>
@@ -35,7 +37,12 @@ function TodoItem(props) {
                     <Dropdown.Item href={`/crud-frontend/${props.todo.nanoid}`}>
                     <span style={{'float':'left'}}>Update</span> <FaPencilAlt style={{'padding-bottom':'3px'}} className={'link-warning'}/></Dropdown.Item>
 
-                    <Dropdown.Item onClick={() => deleteTodoHandler(props.todo.nanoid)} style={{"align":"right"}}>
+                    <Dropdown.Item
+                        onClick={() => {
+                            deleteTodoHandler(props.todo.nanoid);
+                            nav('/crud-frontend');
+                        }}
+                        style={{"align":"right"}}>
                         <span style={{'float':'left'}}>Delete</span>
                     <FaTrash style={{'padding-bottom':'3px'}}  className={'link-danger'}/>
                     </Dropdown.Item>
