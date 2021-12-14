@@ -36,7 +36,7 @@ function App() {
                 <h5 className="card text-white bg-dark mb-4" style={{'font-family': 'Times New Roman', 'font-weight': 'bold'}}>
                     Add Task
                 </h5>
-                <Form align={'left'}>
+                <Form align={'left'} style={{'font-family': 'Ubuntu'}}>
                     <Form.Group className={"mb-3"} controlId={'title'} >
                         <Form.Label>Title</Form.Label>
                         <Form.Control required type={'text'} onChange={event => setTitle(event.target.value)}/>

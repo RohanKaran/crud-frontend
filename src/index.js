@@ -9,7 +9,7 @@ import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
 ReactDOM.render(
    <React.StrictMode> <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto"
-                           style={{"width": "480px", "backgroundColor":"white",'max-width':"100%"}}>
+                           style={{"width": "480px", "backgroundColor":"white",'max-width':"100%", 'font-family':'arvo'}}>
             <br/>
             <h1 className="card-body text-white bg-primary mb-4">
                 Task Manager
@@ -23,7 +23,7 @@ ReactDOM.render(
       </Routes>
   </Router>
    <div id="main" className="App card-body list-group-item justify-content-center align-content-center mx-auto my-auto bg-secondary"
-        style={{"width": "480px", "backgroundColor":"white", 'max-width':"100%"}}>
+        style={{"width": "480px", "backgroundColor":"white", 'max-width':"100%", 'font-family': 'Ubuntu'}}>
             <div className="card-body text-white">
                 Created by : Rohan Karan
                 <br/>
