@@ -34,7 +34,7 @@ function App() {
 
             <div className="card-body list-group-item">
                 <h5 className="card text-white bg-dark mb-4" style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>
-                    Add Your Task
+                    Add Task
                 </h5>
                 <Form align={'left'}>
                     <Form.Group className={"mb-3"} controlId={'title'} >
@@ -61,7 +61,7 @@ function App() {
                     >
                         Add <FaPlus style={{'padding-bottom':'3.5px'}}/>
                     </Button>
-                <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>Your Tasks</h5>
+                <h5 className={"card text-white bg-dark mb-3"} style={{'font-family': 'Palatino Linotype', 'font-weight': 'bold'}}>All Tasks</h5>
                 <div className={'justify-content-start align-content-start'}>
                     <TodoView todoList = {todoList} />
                 </div>
