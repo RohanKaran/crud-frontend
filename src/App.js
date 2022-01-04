@@ -54,7 +54,7 @@ function App() {
                             style={{borderRadius: '50px',}}
                             onClick={() => {
                                 addTodoHandler();
-                                nav('/crud-frontend');
+                                // nav('/crud-frontend');
 
                     }}
                     disabled={(title.trim()==="")}
